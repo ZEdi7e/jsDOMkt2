@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о собаках</title>
+    <style>
+        body {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Информация о собаках</h1>
+    <div id="dogContainer"></div>
+
+    <script>
+        const dog = [
+    {
+        "name": "Аусси",
+        "img_link": "https://lapkins.ru/upload/iblock/2ca/2ca744cbcd97469ed86860852ace4f40.jpg",
+        "age": 8,
+        "rate": 7,
+        "favourite": false,
+        "description": " овчарка обладает удивительной красотой. Её выразительный взгляд сведёт с ума даже заядлого любителя кошек.",
+        "id": 1
+    },
+    {
+        "name": "Азавак",
+        "img_link": "https://lapkins.ru/upload/iblock/98a/32e86cxs0z7fqwtalz3yq6udyokh7cp7.jpg",
+        "age": 2,
+        "rate": 10,
+        "favourite": false,
+        "description": "Азавак (африканская борзая) – вид грациозных, тонкошерстных собак, исторически обитающий в африканском регионе Сахель. Азавак относится к аборигенным примитивным породам, испытавшим минимальное влияние человека.",
+        "id": 2
+    },
+    {
+        "name": "Акита-ину",
+        "img_link": "https://lapkins.ru/upload/iblock/923/923124829b0781ae065bff0951917c74.jpg",
+        "age": 1,
+        "rate": 10,
+        "favourite": true,
+        "description": "Акита-ину – одна из древнейших пород собак на Земле, выведена в северных регионах Японии. Это гордый, сильный и преданный питомец.",
+        "id": 3
+    },
+    {
+        "name": "Алабай (Среднеазиатская овчарка)",
+        "img_link": "https://lapkins.ru/upload/iblock/609/609708aa8ba6a6e5eccecc9a058c1b65.jpg",
+        "age": 4,
+        "rate": 8,
+        "favourite": false,
+        "description": "Алабай – собака, сохранившая и донесшая до наших дней выносливость древних овчарок Средней Азии и бесстрашие боевых псов Месопотамии.",
+        "id": 4
+    },
+    {
+        "name": "Аляскинский кли-кай",
+        "img_link": "https://lapkins.ru/upload/iblock/711/711575948caea27bae92a180a7853756.jpg",
+        "age": 1,
+        "rate": 8,
+        "favourite": false,
+        "description": "Аляскинский кли-кай – миниатюрная копия хаски и счастливый обладатель недюжинного обаяния, которое растопит ваше сердце! Вы не сдержите улыбку, глядя на столь харизматичного питомца.",
+        "id": 5
+    },
+    {
+        "name": "Аляскинский маламут",
+        "img_link": "https://lapkins.ru/upload/iblock/6d0/6d0c636ec1391c4a92b1fa82b7fb9be6.jpg",
+        "age": 6,
+        "rate": 9,
+        "favourite": false,
+        "description": "Аляскинский маламут – древняя порода, выведенная эскимосами племени малемьют. Крупные и выносливые, маламуты предназначены для работы в собачьих упряжках в регионах Крайнего Севера.",
+        "id": 6
+    },
+    {
+        "name": "Американская акита",
+        "img_link": "https://lapkins.ru/upload/iblock/e88/e881aa3e59df6650a093dd15e28deb9d.jpg",
+        "age": 1,
+        "rate": 9,
+        "favourite": false,
+        "description": "Американская акита – сравнительно молодая порода. Это крупная собака с серьезным нравом. Тем, кто найдет к ней подход, станет верным другом.",
+        "id": 7
+    },
+    {
+        "name": "Американский бандог",
+        "img_link": "https://lapkins.ru/upload/iblock/9c3/3umyn3uoddl1v807d6h0al1zps8z130b.jpg",
+        "age": 1,
+        "rate": 10,
+        "favourite": false,
+        "description": "Американский бандог – потомок амстаффов, питбулей и мастифов, изначально выведенный для участия в собачьих боях. В сегодняшних реалиях чаще используется как сторожевая порода.",
+        "id": 8
+    },
+    {
+        "name": "Американский булли",
+        "img_link": "https://lapkins.ru/upload/iblock/c11/c11f6b3cba1cfa5abaa0aa4654479127.jpg",
+        "age": 1,
+        "rate": 9,
+        "favourite": true,
+        "description": "Американский булли – бодибилдер в мире собак. При взгляде на этого приземистого крепыша с оскалом хищника, с трудом верится в дружелюбие и кроткий нрав животного. Тем не менее, долой стереотипы!",
+        "id": 9
+    }
+]
+
+        const dogContainer = document.getElementById('dogContainer');
+
+        dog.forEach(dog => {
+            const dogDiv = document.createElement('div');
+            dogDiv.innerHTML = `
+                <h2>${dog.name}</h2>
+                <img src="${dog.img_link}" alt="${dog.name}" style="width: 300px">
+                <p>Age: ${dog.age} years</p>
+                <p>Rating: ${dog.rate}/10</p>
+                <p>Description: ${dog.description}</p>
+            `;
+            dogContainer.appendChild(dogDiv);
+        });
+    </script>
+</body>
+</html>
